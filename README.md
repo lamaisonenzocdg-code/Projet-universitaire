@@ -17,6 +17,7 @@ Ce dépôt rassemble une sélection de projets académiques réalisés durant mo
 | [`04_Analyse_Portefeuille_Backtesting`](./04_Analyse_Portefeuille_Backtesting) | Backtest de stratégie de portefeuille actions, étude de cas choix d'investissement | Python, gestion de portefeuille, finance d'entreprise |
 | [`05_VBA_Automatisation`](./05_VBA_Automatisation) | Macros VBA d'automatisation développées en cours et en stage | VBA, Excel |
 | [`06_Notes_Strategiques_Regulation`](./06_Notes_Strategiques_Regulation) | Note de synthèse sur le rapport annuel de l'ACPR | Réglementation prudentielle, Solvabilité II, analyse sectorielle |
+| [`07_Data_Challenge_Risque_Climatique`](./07_Data_Challenge_Risque_Climatique) | Data Challenge Caisse des Dépôts : méthodologie générique de scoring du risque climatique physique par portefeuille | Risque climatique, cartographie, analyse de portefeuille, travail d'équipe |
 
 ## Profil
 

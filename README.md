@@ -1,200 +1,90 @@
-# BOT-MK — Z6PO_ · Mandalore Ka'rta
+# Enzo Lamaison — Portfolio
 
-Bot Discord de la communauté **Mandalore Ka'rta** (Clash of Clans, FR).  
-Gestion des joueurs, guerres, rosters de ligue, esport et calendrier — avec une API REST interne qui alimente le [site esport](https://mk-esport.netlify.app/).
+**Master 2 IREF** (Ingénierie des Risques Économiques et Financiers), parcours Finance quantitative et actuariat — Université de Bordeaux
 
----
+Risques financiers · Finance quantitative · Actuariat · Data et reporting
 
-## Stack
-
-| Composant | Technologie |
-|---|---|
-| Runtime | Node.js |
-| Discord | discord.js v14 |
-| CoC API | clashofclans.js |
-| Base de données | MongoDB Atlas |
-| Rendu image | canvas |
-| Serveur API | Express + CORS |
-| Hébergement | Oracle Cloud Free Tier (Ubuntu 22.04) |
-| Process manager | PM2 |
-| Déploiement | GitHub → `~/update-bot.sh` |
+🌐 **Site portfolio :** [enzo-lamaison.netlify.app](https://enzo-lamaison.netlify.app)
 
 ---
 
-## Commandes slash
+## En bref
 
-### Joueurs & comptes CoC
+Je modélise des risques et je construis les outils qui vont avec : VaR et GARCH en R, simulation actuarielle en Python, reporting Power BI en production, et des applications complètes que j'ai conçues, déployées et que j'utilise au quotidien.
 
-| Commande | Description |
+Je recherche un **CDI** en analyse des risques, modélisation financière ou actuarielle, audit ou contrôle de gestion.
+
+| Projets phares | Ce qu'ils montrent |
 |---|---|
-| `/lier-joueur` | Associe un tag CoC à un membre Discord |
-| `/supprimer-joueur` | Supprime la liaison CoC d'un membre |
-| `/supprimer-compte-tag` | Délie un tag CoC précis |
-| `/joueurs-lies` | Liste tous les joueurs liés du serveur |
-| `/mes-comptes` | Affiche les comptes CoC d'un membre |
-| `/profil-joueur` | Profil complet d'un joueur (HDV, trophées, ligue…) |
-| `/stats-joueur` | Stats de guerre d'un joueur |
-
-### Clans
-
-| Commande | Description |
-|---|---|
-| `/lier-clan` | Enregistre un clan (nom court + tag CoC) |
-| `/supprimer-clan` | Supprime un clan enregistré |
-| `/clans-enregistres` | Liste les clans enregistrés |
-| `/clan` | Infos générales d'un clan |
-| `/membres` | Liste des membres d'un clan avec HDV et trophées |
-| `/guerre` | Statut de la guerre en cours d'un clan |
-| `/discord-links` | Correspondances Discord ↔ CoC pour un clan |
-
-### Rappels de guerre (GDC)
-
-| Commande | Description |
-|---|---|
-| `/rappel` | Envoie un rappel pour la guerre d'un clan |
-| `/rappel-tous` | Rappels pour tous les clans configurés |
-| `/rappel-all` | Rappel global (tous clans, tous membres) |
-| `/rappel-auto` | Active / désactive les rappels automatiques |
-| `/configurer-salon` | Définit le salon cible pour les rappels |
-
-### Roster de Ligue de Clans (LDC)
-
-| Commande | Description |
-|---|---|
-| `/roster-creer` | Crée un roster pour un clan (filtre HDV optionnel) |
-| `/roster-poster` | Poste le roster en mode `signup` (inscriptions) ou `post` (publication) |
-| `/roster-ajouter` | Ajoute un joueur au roster |
-| `/roster-retirer` | Retire un joueur du roster |
-| `/roster-deplacer` | Déplace un compte d'un roster vers un autre |
-| `/roster-role` | Attribue un rôle Discord aux inscrits |
-| `/roster-fin-ligue` | Archive le roster de fin de saison |
-| `/roster-supprimer` | Supprime un roster |
-| `/roster-vider` | Vide un roster sans le supprimer |
-| `/ligue-inscrits` | Liste les inscrits LDC d'un clan |
-
-### Esport
-
-| Commande | Description |
-|---|---|
-| `/esport effectif` | Affiche l'effectif esport (Elite ou Death Watch) |
-| `/esport joueur-ajouter` | Ajoute un joueur à l'effectif esport |
-| `/esport joueur-retirer` | Retire un joueur de l'effectif esport |
-| `/esport actualiser` | Synchronise les données HDV depuis CoC |
-| `/esport calendrier` | Configure / déclenche l'envoi du calendrier hebdo |
+| [Scoring du risque climatique physique](./07_Data_Challenge_Risque_Climatique) | Méthodologie de risque complète, de la donnée brute au score de portefeuille |
+| [VaR et ARMA-GARCH](./02_Finance_Quantitative_VaR_GARCH) | Risque de marché, économétrie, backtesting réglementaire |
+| [Mon Budget](#mon-budget) | Application web de bout en bout, connexion bancaire DSP2 |
+| [Écosystème MK](./08_Bot_Discord_Z6PO) | Bot, base de données, API REST et site web reliés entre eux |
 
 ---
 
-## Automatisations planifiées
+## Projets personnels
 
-| Heure (Paris) | Action |
-|---|---|
-| **08:00** chaque matin | Envoi du calendrier esport de la semaine dans le salon configuré |
-| Sync HDV | Mise à jour quotidienne des niveaux HDV des joueurs esport depuis l'API CoC |
+### Mon Budget
 
-Le calendrier hebdomadaire est posté sous forme d'embed Discord avec :
-- La liste des matchs de la semaine (équipe, adversaire, date, heure)
-- Un bilan victoires / défaites
-- Un bouton **"Voir le calendrier complet"** → [mk-esport.netlify.app](https://mk-esport.netlify.app/)
+Application web de gestion de budget multi-comptes, conçue et utilisée pour mon propre usage.
+
+- Connexion bancaire automatique via l'API **DSP2** d'Enable Banking
+- Import de relevés CSV, catégorisation des dépenses
+- Détection des dépenses récurrentes et suivi des échéances
+- Rapprochement bancaire et budgets par catégorie
+- Tableaux de bord et évolution mensuelle
+
+**Stack :** JavaScript · Supabase (authentification, PostgreSQL) · Chart.js · Netlify Functions · Enable Banking API
+
+> Code source privé, présentable sur demande en entretien.
+
+### Écosystème MK : bot Discord Z6PO_ et site e-sport
+
+Pour une communauté Clash of Clans d'environ 400 membres répartis sur sept clans, un bot Discord qui automatise le travail du staff, et un site e-sport alimenté en direct par l'API REST du bot.
+
+- 34 commandes slash : joueurs, clans, rappels de guerre, rosters de ligue, e-sport
+- Automatisations planifiées : calendrier e-sport chaque matin, synchronisation quotidienne avec l'API du jeu
+- API REST Express consommée par le site [mk-esport.netlify.app](https://mk-esport.netlify.app/)
+
+**Stack :** Node.js · discord.js v14 · MongoDB Atlas · Express · Oracle Cloud · PM2 · Netlify
+
+📄 [Documentation complète du bot](./08_Bot_Discord_Z6PO) — code source privé, présentable sur demande.
 
 ---
 
-## API REST interne (port 3000)
+## Projets universitaires
 
-Utilisée par le site esport. Toutes les routes renvoient du JSON.
-
-| Méthode | Route | Description |
+| Dossier | Contenu | Compétences |
 |---|---|---|
-| `GET` | `/esport/joueurs` | Liste tous les joueurs esport (id normalisé = tag CoC) |
-| `GET` | `/esport/matchs` | Liste tous les matchs |
-| `POST` | `/esport/matchs` | Crée ou met à jour un match |
-| `DELETE` | `/esport/matchs/:id` | Supprime un match |
-| `GET` | `/esport/compets` | Liste les compétitions |
-| `POST` | `/esport/compets` | Crée ou met à jour une compétition |
-| `DELETE` | `/esport/compets/:id` | Supprime une compétition |
+| [`01_Actuariat_NonVie`](./01_Actuariat_NonVie) | Modèle collectif Poisson-exponentielle : algorithme de Panjer, convolution, Monte-Carlo, comparaison des VaR | Python, NumPy, SciPy, théorie du risque |
+| [`02_Finance_Quantitative_VaR_GARCH`](./02_Finance_Quantitative_VaR_GARCH) | VaR par quatre méthodes et modèle ARMA-GARCH(1,1) sur Banorte, backtesting de Kupiec et Christoffersen | R, économétrie financière, risque de marché |
+| [`03_Pricing_Options`](./03_Pricing_Options) | Pricer Black-Scholes avec Greeks (Excel/VBA) et pricing d'options par Monte-Carlo | VBA, Python, produits dérivés |
+| [`04_Analyse_Portefeuille_Backtesting`](./04_Analyse_Portefeuille_Backtesting) | Backtest d'une stratégie actions sur la Bourse de Milan, étude de cas sur les droits de la Ligue 1 | Python, gestion de portefeuille, finance d'entreprise |
+| [`05_VBA_Automatisation`](./05_VBA_Automatisation) | Projets d'automatisation Excel en VBA | VBA, Excel |
+| [`06_Notes_Strategiques_Regulation`](./06_Notes_Strategiques_Regulation) | Note de synthèse sur le rapport annuel 2024 de l'ACPR pour une direction de mutuelle | Solvabilité II, réglementation prudentielle |
+| [`07_Data_Challenge_Risque_Climatique`](./07_Data_Challenge_Risque_Climatique) | Data Challenge Caisse des Dépôts : méthodologie de scoring du risque climatique physique par portefeuille | QGIS, DRIAS, Géorisques, analyse de portefeuille |
+| [`08_Bot_Discord_Z6PO`](./08_Bot_Discord_Z6PO) | Documentation du bot Discord Z6PO_ et de son API REST | Node.js, MongoDB, Express |
 
-### Schéma MongoDB
-
-**`esport_joueurs`**
-```js
-{
-  tag,        // "#ABC123" — clé primaire, tag CoC
-  discord,    // pseudo Discord
-  discordId,
-  hdv,        // "HDV 18" (string)
-  hdvNum,     // 18 (entier)
-  cocName,
-  updatedAt
-}
-```
-
-**`esport_matchs`**
-```js
-{
-  id,         // identifiant personnalisé
-  team,       // "elite" | "dw"
-  comp,       // nom de la compétition liée
-  title,
-  date, time,
-  squad,      // effectif minimum
-  prep,       // temps de préparation (min)
-  war,        // durée de guerre (min)
-  timed,      // boolean — attaques timées
-  players,    // [tag, tag, ...]
-  result,     // "tbd" | "win" | "loss"
-  su, st,     // étoiles nous / étoiles adversaire
-  notes
-}
-```
-
-**`esport_compets`**
-```js
-{
-  name,       // nom de la compétition
-  team,       // "elite" | "dw"
-  status,     // "active" | "finished"
-  rounds      // tableau de phases / résultats
-}
-```
+Les projets de groupe mentionnent leurs co-auteurs dans le README de chaque dossier. Ce dépôt ne contient que mes propres travaux : les supports de cours de mes enseignants n'y figurent pas.
 
 ---
 
-## Site esport — mk_esport.html
+## Parcours
 
-Fichier unique déployé sur [Netlify](https://mk-esport.netlify.app/).
-
-**Fonctionnalités :**
-- Calendrier hebdomadaire (navigation semaine par semaine)
-- Fiche match : sélection des joueurs, résultat, notes
-- Badge compétition ⚔ sur les cartes de match si une compétition est active
-- Page Compétitions : bilan W/L, barre de progression des phases, prochain match lié, joueurs engagés
-- Page Joueurs : effectif avec badges HDV colorés (orange = Élite, teal = Death Watch)
-- Accès protégé par mot de passe (mode édition / mode lecture seule)
-- **Responsive mobile** : sidebar en overlay avec bouton hamburger ☰, calendrier en liste verticale, modals plein écran
-
----
-
-## Variables d'environnement
-
-| Variable | Description |
+| Période | Expérience |
 |---|---|
-| `DISCORD_TOKEN` | Token du bot Discord |
-| `CLIENT_ID` | Application ID Discord |
-| `COC_EMAIL` | Email du compte développeur CoC |
-| `COC_PASSWORD` | Mot de passe CoC |
-| `MONGODB_URI` | URI de connexion MongoDB Atlas |
+| Fév. – juin 2026 | **Gide Loyrette Nouel**, Direction financière — reporting analytique Power BI mis en production (modèle en étoile, 20 tables, Power Query, DAX), macros VBA, extractions SAP, clôtures mensuelles |
+| Mai – août 2025 | **Crédit Agricole**, Middle Office — KYC et analyse de crédit pour la clientèle professionnelle |
+| 2024 – 2026 | **Master IREF**, Université de Bordeaux — certification AMF |
 
----
+## Compétences
 
-## Emojis serveur
+- **Modélisation :** VaR, GARCH, backtesting, actuariat non-vie, pricing d'options, risque climatique
+- **Programmation :** Python, R, VBA, JavaScript, Node.js, MongoDB, PostgreSQL, API REST
+- **Data et reporting :** Power BI, Power Query, DAX, Excel avancé, SAP / Analysis, QGIS
+- **Cadre réglementaire :** Solvabilité II, Bâle, ACPR, DSP2
 
-Le bot utilise des emojis custom (TH10–TH18, clans, utilitaires) définis dans `EMOJI_IDS` et `CLAN_EMOJIS` en haut de `bot.js`.  
-Pour retrouver un ID : tape `\:nom_emoji:` dans Discord.
+## Contact
 
----
-
-## Notes techniques
-
-- Les `_id` MongoDB (ObjectId) sont normalisés côté API : l'endpoint `/esport/joueurs` retourne `id = tag CoC` pour éviter les bugs d'identification côté front-end.
-- Les embeds Discord sont limités à **1024 caractères par champ** — les longs messages sont découpés (~8 lignes max).
-- Les backticks dans les template literals JS sont un piège fréquent — vérifier l'échappement.
-- Le bot principal et un bot esport dédié coexistent sur le serveur esport — ne pas les fusionner.
+📧 lamaisonenzo.cdg@gmail.com
